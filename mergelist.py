@@ -58,17 +58,20 @@ class MergeList:
             self.stream1_name = self.cleanup_old_stream(name1,self.stream1_name)
         if name2 and name2 != self.stream2_name:
             self.stream2_name = self.cleanup_old_stream(name2,self.stream2_name)
-        if not self.cache:
-            print("drained")
-            print(self.stream_list)
-            self.get_stream_data(self.stream1_name)
-            self.get_stream_data(self.stream2_name)
-            return self.get_smallest()
-        elif self.stream1_name not in self.stream_list:
-            self.get_stream_data(self.stream1_name)
-        elif self.stream2_name not in self.stream_list:
-            self.get_stream_data(self.stream2_name)
+        self.get_stream_data(self.stream1_name)
+        self.get_stream_data(self.stream2_name)
         return self.get_smallest()
+        # if not self.cache:
+        #     print("drained")
+        #     print(self.stream_list)
+        #     self.get_stream_data(self.stream1_name)
+        #     self.get_stream_data(self.stream2_name)
+        #     return self.get_smallest()
+        # elif self.stream1_name not in self.stream_list:
+        #     self.get_stream_data(self.stream1_name)
+        # elif self.stream2_name not in self.stream_list:
+        #     self.get_stream_data(self.stream2_name)
+        # return self.get_smallest()
 
 stream1 = [1, 2, 3, 4, 5]
 stream2 = [2, 3, 4, 4, 5]
