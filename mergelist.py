@@ -10,7 +10,7 @@ class MergeList:
         self.stream1_name = name1
         self.stream2_name = name2
         self.cache = []
-        self.service_endpoint = "https://api.pelotoncycle.com/quiz/next/"
+        self.service_endpoint = "https://test.com/quiz/next/"
         self.last_value = None
         self.stream_list = []
 
